@@ -1,15 +1,37 @@
 // Localhost
 
-###default
+### default
 get http://localhost:8080/
-### get all 
+### get all characters
 get http://localhost:8080/character
-### create
+### get all weapons
 get http://localhost:8080/weapon
-###
+### create character
 POST http://localhost:8080/character
 Content-Type: application/json
-{"name":"albedogsssss",
+
+{"name":"albedo",
+"nation":"mondstadt",
+"element":"geo",
+"weaponType":"sword",
+"estimatedAge":"18-22",
+"rarity":"5star",
+"bonusStat":"geo damage bonus",
+"modelType":"medium male"}
+
+
+// Render
+### default
+get http://cse341-jmp2.onrender.com/
+### get all 
+get http://cse341-jmp2.onrender.com/character
+### get all weapons
+get http://cse341-jmp2.onrender.com/weapon
+### create character
+POST http://cse341-jmp2.onrender.com/character
+Content-Type: application/json
+
+{"name":"albedo",
 "nation":"mondstadt",
 "element":"geo",
 "weaponType":"sword",
