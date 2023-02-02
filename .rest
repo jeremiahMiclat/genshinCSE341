@@ -1,0 +1,17 @@
+// Localhost
+
+### get all 
+get http://localhost:8080/character
+### create
+get http://localhost:8080/weapon
+###
+POST http://localhost:8080/character
+Content-Type: application/json
+{"name":"albedogsssss",
+"nation":"mondstadt",
+"element":"geo",
+"weaponType":"sword",
+"estimatedAge":"18-22",
+"rarity":"5star",
+"bonusStat":"geo damage bonus",
+"modelType":"medium male"}
