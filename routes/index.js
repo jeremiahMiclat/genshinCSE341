@@ -1,15 +1,9 @@
 const express = require('express')
 
 const router = express.Router()
+const characterController = require('../controller/character')
 
-router.get('/', (req, res) => {
-    try {
-        res.write('Lessons 5-8 Project')
-    } catch (e) {
-        return res.status(500).json({ message: e.message })
-    }
-})
-
+router.use('/', characterController.getAll)
 router.use('/character', require('./character'))
 router.use('/weapon', require('./weapon'))
 

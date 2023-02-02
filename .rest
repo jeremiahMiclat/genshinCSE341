@@ -1,5 +1,7 @@
 // Localhost
 
+###default
+get http://localhost:8080/
 ### get all 
 get http://localhost:8080/character
 ### create

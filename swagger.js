@@ -20,6 +20,10 @@ const doc = {
         {
             "name": "Character",
             "description": "Endpoints"
+        },
+        {
+            "name": "Weapon",
+            "description": "Endpoints"
         }
     ],
     definitions: {
@@ -37,7 +41,6 @@ const doc = {
             "weaponType": "polearm", "name": "the catch", "atk(lvl90)": "510",
             "rarity": "5star", "bonustStat(lvl90)": "energy recharge 45.9%"
         },
-        contact_id: "63caeccb50a864c0afbdb910",
         delRes: {
             "acknowledged": true,
             "deletedCount": 1
