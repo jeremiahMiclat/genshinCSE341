@@ -25,6 +25,23 @@
     "application/json"
   ],
   "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Character"
+        ],
+        "description": "Displays all characters.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/character/": {
       "get": {
         "tags": [

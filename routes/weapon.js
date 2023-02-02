@@ -1,9 +1,9 @@
 const express = require('express')
 
 const router = express.Router()
-const controller = require('../controller/weapon')
+const weaponController = require('../controller/weapon')
 
 // get all weapons
-router.get('/', controller.getAll)
+router.get('/', weaponController.getAll)
 
 module.exports = router
