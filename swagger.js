@@ -27,6 +27,19 @@ const doc = {
         }
     ],
     definitions: {
+        Characters: [
+            {
+                "_id": "63db33f83c3121f817c88bf4",
+                "name": "albedo",
+                "nation": "mondstadt",
+                "element": "geo",
+                "weaponType": "sword",
+                "estimatedAge": "18-22",
+                "rarity": "5star",
+                "bonusStat": "geo damage bonus",
+                "modelType": "medium male"
+            }
+        ],
         Character: {
             "name": "albedo",
             "nation": "mondstadt",
@@ -41,7 +54,26 @@ const doc = {
             "weaponType": "polearm", "name": "the catch", "atk(lvl90)": "510",
             "rarity": "5star", "bonustStat(lvl90)": "energy recharge 45.9%"
         },
-        delRes: {
+        Weapons: [
+            {
+                "_id": "63db34bd3c3121f817c88bf9",
+                "weaponType": "bow",
+                "name": "hamayumi",
+                "atkLVL90": "454",
+                "rarity": "4star",
+                "bonustStatLVL90": "attack 55.1%"
+            },
+            {
+                "_id": "63db35003c3121f817c88bfb",
+                "weaponType": "polearm",
+                "name": "the catch",
+                "atkLVL90": "510",
+                "rarity": "5star",
+                "bonustStatLVL90": "energy recharge 45.9%"
+            }
+        ]
+        ,
+        "Delete Responses": {
             "acknowledged": true,
             "deletedCount": 1
         }
