@@ -7,7 +7,7 @@ const getAll = async (req, res) => {
     try {
         /* #swagger.responses[200] = { 
             description: 'Returns all characters information in a collection from mongodb genshin database',
-            schema: { $ref: "#/definitions/Characters" }
+            schema: { $ref: "#/definitions/Character collection" }
        } */
         const character = await Schema.find()
         res.status(200).json(character)
@@ -35,7 +35,7 @@ const addOne = async (req, res) => {
                in: 'body',
                description: 'Information of a character to be created. All fields are required',
                required: true,
-               schema: { $ref: "#/definitions/Character" }
+               schema: { $ref: "#/definitions/Character document creation" }
         } */
 
     try {
@@ -55,7 +55,7 @@ const addOne = async (req, res) => {
 const delOne = async (req, res) => {
     // #swagger.tags = ['Character']
     // #swagger.description = 'Deletes a character document from the collection'
-    // #swagger.parameters['id'] = { description: 'ID from character document to be deleted.' }
+    // #swagger.parameters['id'] = { description: 'ID from character document to be deleted. Example: 63dd79bed4238c841b2794ee' }
     try {
         const removedCharacter = await Schema.deleteOne({ _id: req.params.id })
         res.status(200).json(removedCharacter)

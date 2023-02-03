@@ -27,20 +27,21 @@ const doc = {
         }
     ],
     definitions: {
-        Characters: [
+        "Character collection": [
             {
-                "_id": "63db33f83c3121f817c88bf4",
+                "_id": "63dd835bc3c9c39c32edb7c1",
                 "name": "albedo",
                 "nation": "mondstadt",
                 "element": "geo",
                 "weaponType": "sword",
-                "estimatedAge": "18-22",
                 "rarity": "5star",
+                "estimatedAge": "18-22",
                 "bonusStat": "geo damage bonus",
-                "modelType": "medium male"
+                "modelType": "medium male",
+                "__v": 0
             }
         ],
-        Character: {
+        "Character document creation": {
             "name": "albedo",
             "nation": "mondstadt",
             "element": "geo",
@@ -50,11 +51,11 @@ const doc = {
             "bonusStat": "geo damage bonus",
             "modelType": "medium male"
         },
-        Weapon: {
+        "Weapon document creation": {
             "weaponType": "polearm", "name": "the catch", "atk(lvl90)": "510",
             "rarity": "5star", "bonustStat(lvl90)": "energy recharge 45.9%"
         },
-        Weapons: [
+        "Weapon collection": [
             {
                 "_id": "63db34bd3c3121f817c88bf9",
                 "weaponType": "bow",
@@ -69,7 +70,8 @@ const doc = {
                 "name": "the catch",
                 "atkLVL90": "510",
                 "rarity": "5star",
-                "bonustStatLVL90": "energy recharge 45.9%"
+                "bonustStatLVL90": "energy recharge 45.9%",
+                "__v": 0
             }
         ]
         ,

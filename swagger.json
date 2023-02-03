@@ -36,7 +36,7 @@
           "200": {
             "description": "Returns all characters information in a collection from mongodb genshin database",
             "schema": {
-              "$ref": "#/definitions/Characters"
+              "$ref": "#/definitions/Character collection"
             }
           },
           "500": {
@@ -56,7 +56,7 @@
           "200": {
             "description": "Returns all characters information in a collection from mongodb genshin database",
             "schema": {
-              "$ref": "#/definitions/Characters"
+              "$ref": "#/definitions/Character collection"
             }
           },
           "500": {
@@ -76,7 +76,7 @@
             "description": "Information of a character to be created. All fields are required",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Character"
+              "$ref": "#/definitions/Character document creation"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "ID from character document to be deleted."
+            "description": "ID from character document to be deleted. Example: 63dd79bed4238c841b2794ee"
           }
         ],
         "responses": {
@@ -134,7 +134,10 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Returns all weapons information in a collection from mongodb genshin database",
+            "schema": {
+              "$ref": "#/definitions/Weapon collection"
+            }
           },
           "500": {
             "description": "Internal Server Error"
@@ -144,14 +147,14 @@
     }
   },
   "definitions": {
-    "Characters": {
+    "Character collection": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "_id": {
             "type": "string",
-            "example": "63db33f83c3121f817c88bf4"
+            "example": "63dd835bc3c9c39c32edb7c1"
           },
           "name": {
             "type": "string",
@@ -169,13 +172,13 @@
             "type": "string",
             "example": "sword"
           },
-          "estimatedAge": {
-            "type": "string",
-            "example": "18-22"
-          },
           "rarity": {
             "type": "string",
             "example": "5star"
+          },
+          "estimatedAge": {
+            "type": "string",
+            "example": "18-22"
           },
           "bonusStat": {
             "type": "string",
@@ -184,11 +187,15 @@
           "modelType": {
             "type": "string",
             "example": "medium male"
+          },
+          "__v": {
+            "type": "number",
+            "example": 0
           }
         }
       }
     },
-    "Character": {
+    "Character document creation": {
       "type": "object",
       "properties": {
         "name": {
@@ -225,7 +232,7 @@
         }
       }
     },
-    "Weapon": {
+    "Weapon document creation": {
       "type": "object",
       "properties": {
         "weaponType": {
@@ -250,7 +257,7 @@
         }
       }
     },
-    "Weapons": {
+    "Weapon collection": {
       "type": "array",
       "items": {
         "type": "object",
@@ -278,6 +285,10 @@
           "bonustStatLVL90": {
             "type": "string",
             "example": "energy recharge 45.9%"
+          },
+          "__v": {
+            "type": "number",
+            "example": 0
           }
         }
       }
