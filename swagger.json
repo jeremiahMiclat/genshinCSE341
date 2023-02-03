@@ -95,7 +95,9 @@
             "description": "Internal Server Error"
           }
         }
-      },
+      }
+    },
+    "/character/{id}": {
       "delete": {
         "tags": [
           "Character"
@@ -104,14 +106,18 @@
         "parameters": [
           {
             "name": "id",
-            "description": "ID from character document to be deleted.",
-            "in": "query",
-            "type": "string"
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID from character document to be deleted."
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Delete response of successful deletion. Take note of \"deletedCount: 1\"",
+            "schema": {
+              "$ref": "#/definitions/Delete Responses"
+            }
           },
           "500": {
             "description": "Internal Server Error"

@@ -57,11 +57,11 @@ const delOne = async (req, res) => {
     // #swagger.description = 'Deletes a character document from the collection'
     // #swagger.parameters['id'] = { description: 'ID from character document to be deleted.' }
     try {
-        const removedContact = await Schema.deleteOne({ _id: req.params.id })
-        res.status(200).json(removedContact)
+        const removedCharacter = await Schema.deleteOne({ _id: req.params.id })
+        res.status(200).json(removedCharacter)
         /* #swagger.responses[200] = { 
-            schema: { $ref: "#/definitions/"Delete Responses"" },
-            description: 'Delete response' 
+            schema: { $ref: "#/definitions/Delete Responses" },
+            description: 'Delete response of successful deletion. Take note of "deletedCount: 1"' 
        } */
     } catch (e) {
         return res.status(500).json({ message: e.message })

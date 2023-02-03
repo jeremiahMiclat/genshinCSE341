@@ -7,7 +7,7 @@ const controller = require('../controller/character')
 router.get('/', controller.getAll)
 // add one
 router.post('/', controller.addOne)
-// add one
-router.delete('/', controller.delOne)
+// delete one
+router.delete('/:id', controller.delOne)
 
 module.exports = router
