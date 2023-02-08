@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors');
 const swaggerUi = require('swagger-ui-express')
 const mongoose = require('./db/connect')
 const routes = require('./routes')
@@ -11,6 +12,7 @@ const app = express()
 app
     .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
     .use(bodyParser.json())
+    .use(cors())
     .use((req, res, next) => {
         res.setHeader('Acess-Control-Allow-Origin', '*');
         res.setHeader(
