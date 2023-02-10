@@ -41,6 +41,17 @@ const doc = {
                 "__v": 0
             }
         ],
+        "Character document": {
+            "_id": "63dd835bc3c9c39c32edb7c1",
+            "name": "albedo",
+            "nation": "mondstadt",
+            "element": "geo",
+            "weaponType": "sword",
+            "estimatedAge": "18-22",
+            "rarity": "5star",
+            "bonusStat": "geo damage bonus",
+            "modelType": "medium male"
+        },
         "Character document creation": {
             "name": "albedo",
             "nation": "mondstadt",
@@ -50,6 +61,16 @@ const doc = {
             "rarity": "5star",
             "bonusStat": "geo damage bonus",
             "modelType": "medium male"
+        },
+        "Character update": {
+            "name": "",
+            "nation": "",
+            "element": "",
+            "weaponType": "",
+            "rarity": "4star or 5star",
+            "estimatedAge": "",
+            "bonusStat": "",
+            "modelType": "",
         },
         "Weapon document creation": {
             "weaponType": "polearm", "name": "the catch", "atk(lvl90)": "510",

@@ -7,6 +7,8 @@ const controller = require('../controller/character')
 router.get('/', controller.getAll)
 // add one
 router.post('/', controller.addOne)
+// update one
+router.put('/:id', controller.updateOne)
 // delete one
 router.delete('/:id', controller.delOne)
 
