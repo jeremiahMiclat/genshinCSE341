@@ -98,6 +98,32 @@
       }
     },
     "/character/{id}": {
+      "get": {
+        "tags": [
+          "Character"
+        ],
+        "description": "Fetching a character document through _id from mongodb collection.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of character."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Character data fetched from collection in db.",
+            "schema": {
+              "$ref": "#/definitions/Character document"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
       "put": {
         "tags": [
           "Character"

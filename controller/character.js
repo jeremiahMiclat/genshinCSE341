@@ -16,6 +16,23 @@ const getAll = async (req, res) => {
     }
 }
 
+// fetch by id
+const getOne = async (req, res) => {
+    // #swagger.tags = ['Character']
+    // #swagger.description = 'Fetching a character document through _id from mongodb collection.'
+    // #swagger.parameters['id'] = { description: 'ID of character.' }
+    try {
+        const character = await Schema.findById(req.params.id)
+        res.status(200).json(character)
+        /* #swagger.responses[200] = { 
+              schema: { $ref: "#/definitions/Character document" },
+              description: 'Character data fetched from collection in db.' 
+       } */
+    } catch (e) {
+        return res.status(500).json({ message: e.message })
+    }
+}
+
 
 // create one
 const addOne = async (req, res) => {
@@ -103,4 +120,4 @@ const delOne = async (req, res) => {
     }
 }
 
-module.exports = { getAll, addOne, delOne, updateOne }
+module.exports = { getOne, getAll, addOne, delOne, updateOne }

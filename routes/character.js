@@ -5,6 +5,8 @@ const controller = require('../controller/character')
 
 // get all characters
 router.get('/', controller.getAll)
+// get one
+router.get('/:id', controller.getOne)
 // add one
 router.post('/', controller.addOne)
 // update one
