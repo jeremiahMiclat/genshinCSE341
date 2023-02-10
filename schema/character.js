@@ -19,7 +19,7 @@ const schema = new mongoose.Schema({
     },
     rarity: {
         type: String,
-        enum: ['4star, 5star'],
+        enum: ['4star', '5star'],
         required: true
     },
     estimatedAge: {
