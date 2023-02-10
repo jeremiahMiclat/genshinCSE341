@@ -2,6 +2,8 @@
 
 ### default
 get http://localhost:8080/
+### get one character
+get http://localhost:8080/character/
 ### get all characters
 get http://localhost:8080/character
 ### update by id
@@ -40,8 +42,10 @@ get http://localhost:8080/weapon
 get http://cse341-jmp2.onrender.com/
 ### get all 
 get http://cse341-jmp2.onrender.com/character
+### get one
+get http://cse341-jmp2.onrender.com/character/63e5b664409562ac49ab86aa
 ### update by id
-put http://cse341-jmp2.onrender.com/character
+put http://cse341-jmp2.onrender.com/character/63e5b664409562ac49ab86aa
 Content-Type: application/json
 
 {"name":"albedo",
@@ -49,7 +53,7 @@ Content-Type: application/json
 "element":"geo",
 "weaponType":"sword",
 "estimatedAge":"18-22",
-"rarity":"5star",
+"rarity":"3star",
 "bonusStat":"geo damage bonus",
 "modelType":"medium male"}
 ### delete character
