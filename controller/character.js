@@ -57,7 +57,7 @@ const updateOne = async (req, res) => {
     // #swagger.tags = ['Character']
     // #swagger.description = 'Updating a character information.'
     // #swagger.parameters['id'] = { description: 'ID of character to be updated.' }
-    const character = Schema({
+    const character = new Schema({
         _id: req.params.id,
         name: req.body.name,
         nation: req.body.nation,
@@ -70,12 +70,12 @@ const updateOne = async (req, res) => {
     })
     /* #swagger.parameters['character'] = {
                in: 'body',
-               description: 'Information of a character being updated.',
+               description: 'Information of a character being updated. All fields are required. Rarity must be 4star or 5star',
                required: true,
-               schema: { $ref: "#/definitions/Character update" }
+               schema: { $ref: "#/definitions/Character document creation" }
         } */
     try {
-        const characterUpdated = await Schema.findByIdAndUpdate(req.params.id, { $set: character }, { new: true })
+        const characterUpdated = await Schema.findOneAndUpdate(req.params.id, { $set: character }, { new: true, runValidators: true })
         res.status(204).json(characterUpdated)
         /* #swagger.responses[204] = { 
             schema: { $ref: "#/definitions/Character document creation" },
