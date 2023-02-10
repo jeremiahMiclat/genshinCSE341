@@ -5,7 +5,7 @@ get http://localhost:8080/
 ### get all characters
 get http://localhost:8080/character
 ### delete character
-DELETE url HTTP/1.1 http://localhost:8080/character
+DELETE http://localhost:8080/character
 ### create character
 POST http://localhost:8080/character
 Content-Type: application/json
@@ -29,7 +29,7 @@ get http://cse341-jmp2.onrender.com/
 ### get all 
 get http://cse341-jmp2.onrender.com/character
 ### delete character
-DELETE url HTTP/1.1 http://localhost:8080/character
+DELETE http://cse341-jmp2.onrender.com/character
 ### create character
 POST http://cse341-jmp2.onrender.com/character
 Content-Type: application/json
