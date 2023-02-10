@@ -4,6 +4,18 @@
 get http://localhost:8080/
 ### get all characters
 get http://localhost:8080/character
+### update by id
+put http://localhost:8080/character
+Content-Type: application/json
+
+{"name":"albedo",
+"nation":"mondstadt",
+"element":"geo",
+"weaponType":"sword",
+"estimatedAge":"18-22",
+"rarity":"5star",
+"bonusStat":"geo damage bonus",
+"modelType":"medium male"}
 ### delete character
 DELETE http://localhost:8080/character
 ### create character
@@ -28,6 +40,18 @@ get http://localhost:8080/weapon
 get http://cse341-jmp2.onrender.com/
 ### get all 
 get http://cse341-jmp2.onrender.com/character
+### update by id
+put http://cse341-jmp2.onrender.com/character
+Content-Type: application/json
+
+{"name":"albedo",
+"nation":"mondstadt",
+"element":"geo",
+"weaponType":"sword",
+"estimatedAge":"18-22",
+"rarity":"5star",
+"bonusStat":"geo damage bonus",
+"modelType":"medium male"}
 ### delete character
 DELETE http://cse341-jmp2.onrender.com/character
 ### create character
