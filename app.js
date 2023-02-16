@@ -2,9 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express')
-const { auth } = require('express-openid-connect')
+const { auth, requiresAuth } = require('express-openid-connect')
 const dotenv = require('dotenv')
 const mongoose = require('./db/connect')
+const auth0 = require('./auth0')
 const routes = require('./routes')
 const swaggerFile = require('./swagger.json')
 
@@ -26,7 +27,12 @@ const config = {
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config))
 
+app.get('/profile', requiresAuth(), (req, res) => {
+    res.send(`hello ${req.oidc.user.name}`);
+});
+
 app
+    .use(auth0)
     .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
     .use(bodyParser.json())
     .use(cors())
