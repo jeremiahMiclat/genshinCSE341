@@ -2,11 +2,23 @@ const express = require('express')
 
 const router = express.Router()
 const controller = require('../controller/character')
+const { tryCatch } = require("../utils/tryCatch")
 
 // get all characters
 router.get('/', controller.getAll)
-// get one
-router.get('/:id', controller.getOne)
+
+// get one character
+router.get('/:id', tryCatch(
+    // #swagger.tags = ['Character']
+    // #swagger.description = 'Fetching a character document through _id from mongodb collection.'
+    // #swagger.parameters['id'] = { description: 'ID of character.' }
+    /* #swagger.responses[200] = { 
+         schema: { $ref: "#/definitions/Character document" },
+         description: 'Character data fetched from collection in db.' 
+  } */
+    controller.getOne))
+
+
 // add one
 router.post('/', controller.addOne)
 // update one

@@ -1,5 +1,6 @@
 const Schema = require('../schema/character')
 
+
 // fetch all
 const getAll = async (req, res) => {
     // #swagger.tags = ['Character']
@@ -18,19 +19,12 @@ const getAll = async (req, res) => {
 
 // fetch by id
 const getOne = async (req, res) => {
-    // #swagger.tags = ['Character']
-    // #swagger.description = 'Fetching a character document through _id from mongodb collection.'
-    // #swagger.parameters['id'] = { description: 'ID of character.' }
-    try {
-        const character = await Schema.findById(req.params.id)
-        res.status(200).json(character)
-        /* #swagger.responses[200] = { 
-              schema: { $ref: "#/definitions/Character document" },
-              description: 'Character data fetched from collection in db.' 
-       } */
-    } catch (e) {
-        return res.status(500).json({ message: e.message })
+    const character = await Schema.findById(req.params.id)
+
+    if (!character) {
+        throw new Error('ID not found')
     }
+    res.status(200).json(character)
 }
 
 
@@ -108,5 +102,7 @@ const delOne = async (req, res) => {
         return res.status(500).json({ message: e.message })
     }
 }
+
+
 
 module.exports = { getOne, getAll, addOne, delOne, updateOne }

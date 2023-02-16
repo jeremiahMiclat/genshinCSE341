@@ -25,26 +25,6 @@
     "application/json"
   ],
   "paths": {
-    "/": {
-      "get": {
-        "tags": [
-          "Character"
-        ],
-        "description": "Displays all characters.",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Returns all characters information in a collection from mongodb genshin database",
-            "schema": {
-              "$ref": "#/definitions/Character collection"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
     "/character/": {
       "get": {
         "tags": [
@@ -114,13 +94,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Character data fetched from collection in db.",
             "schema": {
               "$ref": "#/definitions/Character document"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error"
+            },
+            "description": "Character data fetched from collection in db."
           }
         }
       },

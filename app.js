@@ -8,6 +8,8 @@ const mongoose = require('./db/connect')
 const auth0 = require('./auth0')
 const routes = require('./routes')
 const swaggerFile = require('./swagger.json')
+const errorHandler = require('./middleware/errorHandler')
+
 
 
 dotenv.config()
@@ -46,7 +48,8 @@ app
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
         next();
     })
-    .use(routes);
+    .use(routes)
+    .use(errorHandler);
 
 mongoose.initDb((err) => {
     if (err) {
