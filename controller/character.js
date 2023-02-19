@@ -3,18 +3,14 @@ const Schema = require('../schema/character')
 
 // fetch all
 const getAll = async (req, res) => {
-    // #swagger.tags = ['Character']
-    // #swagger.description = 'Displays all characters.'
-    try {
-        /* #swagger.responses[200] = { 
-            description: 'Returns all characters information in a collection from mongodb genshin database',
-            schema: { $ref: "#/definitions/Character collection" }
-       } */
-        const character = await Schema.find()
-        res.status(200).json(character)
-    } catch (e) {
-        return res.status(500).json({ message: e.message })
+    const character = await Schema.find()
+    // const character = false
+
+    if (!character) {
+        throw new Error('Something went wrong')
     }
+
+    res.status(200).json(character)
 }
 
 // fetch by id
@@ -24,6 +20,7 @@ const getOne = async (req, res) => {
     if (!character) {
         throw new Error('ID not found')
     }
+
     res.status(200).json(character)
 }
 

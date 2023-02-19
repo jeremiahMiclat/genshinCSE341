@@ -3,7 +3,7 @@ const errorHandler = (error, req, res, next) => {
     console.log(error.name);
 
     if (error.name === "CastError") {
-        return res.status(500).send("Check input or id count");
+        return res.status(500).send("Check input data type or count");
     }
 
     return res.status(500).send(error.message);

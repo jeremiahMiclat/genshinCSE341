@@ -38,9 +38,6 @@
             "schema": {
               "$ref": "#/definitions/Character collection"
             }
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
