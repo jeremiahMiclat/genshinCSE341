@@ -7,7 +7,7 @@ get http://localhost:8080/character/
 ### get all characters
 get http://localhost:8080/character
 ### update by id
-put http://localhost:8080/character
+put http://localhost:8080/character/63dd835bc3c9c39c32edb7c1
 Content-Type: application/json
 
 {"name":"albedo",

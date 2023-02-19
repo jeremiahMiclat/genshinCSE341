@@ -114,19 +114,16 @@
             "description": "Information of a character being updated. All fields are required. Rarity must be 4star or 5star",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Character document creation"
+              "$ref": "#/definitions/Character document"
             }
           }
         ],
         "responses": {
           "204": {
-            "description": "Returns newly updated character information in this format",
             "schema": {
               "$ref": "#/definitions/Character document creation"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error"
+            },
+            "description": "Returns newly updated character information in this format"
           }
         }
       },
@@ -265,6 +262,10 @@
         "modelType": {
           "type": "string",
           "example": "medium male"
+        },
+        "__v": {
+          "type": "number",
+          "example": 0
         }
       }
     },

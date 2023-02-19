@@ -50,7 +50,8 @@ const doc = {
             "estimatedAge": "18-22",
             "rarity": "5star",
             "bonusStat": "geo damage bonus",
-            "modelType": "medium male"
+            "modelType": "medium male",
+            "__v": 0
         },
         "Character document creation": {
             "name": "albedo",

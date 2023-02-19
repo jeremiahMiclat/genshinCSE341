@@ -41,10 +41,6 @@ const addOne = async (req, res) => {
 
     const createdCharacter = await contact.save()
 
-    if (!createdCharacter) {
-        throw Error
-    }
-
     res.status(201).json(createdCharacter._id)
 
 }
@@ -52,25 +48,13 @@ const addOne = async (req, res) => {
 
 // update
 const updateOne = async (req, res) => {
-    // #swagger.tags = ['Character']
-    // #swagger.description = 'Updating a character information.'
-    // #swagger.parameters['id'] = { description: 'ID of character to be updated.' }
-    /* #swagger.parameters['character'] = {
-               in: 'body',
-               description: 'Information of a character being updated. All fields are required. Rarity must be 4star or 5star',
-               required: true,
-               schema: { $ref: "#/definitions/Character document creation" }
-        } */
-    try {
-        const characterUpdated = await Schema.findOneAndUpdate({ _id: req.params.id }, { $set: req.body }, { new: true, runValidators: true })
-        res.status(204).json(characterUpdated)
-        /* #swagger.responses[204] = { 
-            schema: { $ref: "#/definitions/Character document creation" },
-            description: 'Returns newly updated character information in this format' 
-       } */
-    } catch (e) {
-        return res.status(500).json({ message: e.message })
-    }
+
+    const characterUpdated = await Schema.findOneAndUpdate({ _id: req.params.id }, { $set: req.body }, { new: true, runValidators: true })
+
+    res.json(characterUpdated)
+
+    res.status(204)
+
 }
 
 // delete

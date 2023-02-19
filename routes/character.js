@@ -43,7 +43,22 @@ router.post('/', tryCatch(
   controller.addOne))
 
 // update one
-router.put('/:id', controller.updateOne)
+router.put('/:id', tryCatch(
+  // #swagger.tags = ['Character']
+  // #swagger.description = 'Updating a character information.'
+  // #swagger.parameters['id'] = { description: 'ID of character to be updated.' }
+  /* #swagger.parameters['character'] = {
+             in: 'body',
+             description: 'Information of a character being updated. All fields are required. Rarity must be 4star or 5star',
+             required: true,
+             schema: { $ref: "#/definitions/Character document" }
+      } */
+  /* #swagger.responses[204] = { 
+schema: { $ref: "#/definitions/Character document creation" },
+description: 'Returns newly updated character information in this format' 
+} */
+  controller.updateOne
+))
 // delete one
 router.delete('/:id', controller.delOne)
 
