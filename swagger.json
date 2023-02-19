@@ -143,13 +143,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Delete response of successful deletion. Take note of \"deletedCount: 1\"",
             "schema": {
               "$ref": "#/definitions/Delete Responses"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error"
+            },
+            "description": "Delete response of successful deletion. Take note of \"deletedCount: 1\""
           }
         }
       }

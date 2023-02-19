@@ -60,6 +60,15 @@ description: 'Returns newly updated character information in this format'
   controller.updateOne
 ))
 // delete one
-router.delete('/:id', controller.delOne)
+router.delete('/:id', tryCatch(
+  // #swagger.tags = ['Character']
+  // #swagger.description = 'Deletes a character document from the collection'
+  // #swagger.parameters['id'] = { description: 'ID from character document to be deleted. Example: 63dd79bed4238c841b2794ee' }
+  /* #swagger.responses[200] = { 
+          schema: { $ref: "#/definitions/Delete Responses" },
+          description: 'Delete response of successful deletion. Take note of "deletedCount: 1"' 
+     } */
+  controller.delOne
+))
 
 module.exports = router
