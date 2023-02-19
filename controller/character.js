@@ -41,7 +41,7 @@ const addOne = async (req, res) => {
     })
     /* #swagger.parameters['character'] = {
                in: 'body',
-               description: 'Information of a character to be created. All fields are required',
+               description: 'Information of a character to be created. All fields are required. Rarity must be 4star or 5star',
                required: true,
                schema: { $ref: "#/definitions/Character document creation" }
         } */

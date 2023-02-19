@@ -58,7 +58,7 @@ const doc = {
             "element": "geo",
             "weaponType": "sword",
             "estimatedAge": "18-22",
-            "rarity": "5star",
+            "rarity": "4star or 5star",
             "bonusStat": "geo damage bonus",
             "modelType": "medium male"
         },
