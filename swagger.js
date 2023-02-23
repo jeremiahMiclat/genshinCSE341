@@ -13,7 +13,7 @@ const doc = {
     },
     host: "cse341-jmp2.onrender.com",
     basePath: "/",
-    schemes: 'http',
+    schemes: 'https',
     consumes: ['application/json'],
     produces: ['application/json'],
     tags: [
