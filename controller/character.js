@@ -51,9 +51,8 @@ const updateOne = async (req, res) => {
 
     const characterUpdated = await Schema.findOneAndUpdate({ _id: req.params.id }, { $set: req.body }, { new: true, runValidators: true })
 
-    res.json(characterUpdated)
+    res.status(204).json(characterUpdated)
 
-    res.status(204)
 
 }
 

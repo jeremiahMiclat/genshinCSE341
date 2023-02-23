@@ -114,16 +114,13 @@
             "description": "Information of a character being updated. All fields are required. Rarity must be 4star or 5star",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Character document"
+              "$ref": "#/definitions/Character document creation"
             }
           }
         ],
         "responses": {
           "204": {
-            "schema": {
-              "$ref": "#/definitions/Character document creation"
-            },
-            "description": "Returns newly updated character information in this format"
+            "description": "Returns 204 response when successful"
           }
         }
       },
@@ -164,9 +161,37 @@
             "schema": {
               "$ref": "#/definitions/Weapon collection"
             }
+          }
+        }
+      }
+    },
+    "/weapon/{id}": {
+      "put": {
+        "tags": [
+          "Weapon"
+        ],
+        "description": "Updating a weapon information.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of weapon to be updated."
           },
-          "500": {
-            "description": "Internal Server Error"
+          {
+            "name": "character",
+            "in": "body",
+            "description": "Information of a weapon being updated. All fields are required.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Weapon document creation"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Returns 204 response when successful"
           }
         }
       }
@@ -337,6 +362,39 @@
         "modelType": {
           "type": "string",
           "example": ""
+        }
+      }
+    },
+    "Weapon document": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "example": "63dd835bc3c9c39c32edb7c1"
+        },
+        "weaponType": {
+          "type": "string",
+          "example": "polearm"
+        },
+        "name": {
+          "type": "string",
+          "example": "the catch"
+        },
+        "atk(lvl90)": {
+          "type": "string",
+          "example": "510"
+        },
+        "rarity": {
+          "type": "string",
+          "example": "5star"
+        },
+        "bonustStat(lvl90)": {
+          "type": "string",
+          "example": "energy recharge 45.9%"
+        },
+        "__v": {
+          "type": "number",
+          "example": 0
         }
       }
     },

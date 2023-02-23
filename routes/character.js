@@ -51,11 +51,10 @@ router.put('/:id', tryCatch(
              in: 'body',
              description: 'Information of a character being updated. All fields are required. Rarity must be 4star or 5star',
              required: true,
-             schema: { $ref: "#/definitions/Character document" }
+             schema: { $ref: "#/definitions/Character document creation" }
       } */
   /* #swagger.responses[204] = { 
-schema: { $ref: "#/definitions/Character document creation" },
-description: 'Returns newly updated character information in this format' 
+description: 'Returns 204 response when successful' 
 } */
   controller.updateOne
 ))

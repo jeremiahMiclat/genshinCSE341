@@ -73,6 +73,11 @@ const doc = {
             "bonusStat": "",
             "modelType": "",
         },
+        "Weapon document": {
+            "_id": "63dd835bc3c9c39c32edb7c1",
+            "weaponType": "polearm", "name": "the catch", "atk(lvl90)": "510",
+            "rarity": "5star", "bonustStat(lvl90)": "energy recharge 45.9%", "__v": 0
+        },
         "Weapon document creation": {
             "weaponType": "polearm", "name": "the catch", "atk(lvl90)": "510",
             "rarity": "5star", "bonustStat(lvl90)": "energy recharge 45.9%"
