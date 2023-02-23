@@ -75,12 +75,12 @@ const doc = {
         },
         "Weapon document": {
             "_id": "63dd835bc3c9c39c32edb7c1",
-            "weaponType": "polearm", "name": "the catch", "atk(lvl90)": "510",
-            "rarity": "5star", "bonustStat(lvl90)": "energy recharge 45.9%", "__v": 0
+            "weaponType": "polearm", "name": "the catch", "atkLVL90": "510",
+            "rarity": "5star", "bonusStatLVL90": "energy recharge 45.9%", "__v": 0
         },
         "Weapon document creation": {
-            "weaponType": "polearm", "name": "the catch", "atk(lvl90)": "510",
-            "rarity": "5star", "bonustStat(lvl90)": "energy recharge 45.9%"
+            "weaponType": "polearm", "name": "the catch", "atkLVL90": "510",
+            "rarity": "5star", "bonusStatLVL90": "energy recharge 45.9%"
         },
         "Weapon collection": [
             {
@@ -89,7 +89,7 @@ const doc = {
                 "name": "hamayumi",
                 "atkLVL90": "454",
                 "rarity": "4star",
-                "bonustStatLVL90": "attack 55.1%"
+                "bonusStatLVL90": "attack 55.1%"
             },
             {
                 "_id": "63db35003c3121f817c88bfb",
@@ -97,7 +97,7 @@ const doc = {
                 "name": "the catch",
                 "atkLVL90": "510",
                 "rarity": "5star",
-                "bonustStatLVL90": "energy recharge 45.9%",
+                "bonusStatLVL90": "energy recharge 45.9%",
                 "__v": 0
             }
         ]
