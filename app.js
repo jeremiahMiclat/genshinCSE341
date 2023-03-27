@@ -27,14 +27,14 @@ const config = {
 };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
-app.use(auth(config))
+// app.use(auth(config))
 
 app.get('/profile', requiresAuth(), (req, res) => {
     res.send(`hello ${req.oidc.user.name}`);
 });
 
 app
-    .use(auth0)
+    // .use(auth0)
     .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
     .use(bodyParser.json())
     .use(cors())
@@ -59,5 +59,3 @@ mongoose.initDb((err) => {
         console.log(`Connected to DB and listening on ${port}`)
     }
 })
-
-
